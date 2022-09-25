@@ -51,28 +51,6 @@ class _WhatsAppWebViewState extends State<WhatsAppWebView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('WhatsAppWeb App'),
-        centerTitle: true,
-        actions: [
-          IconButton(
-            icon: Icon(
-              Icons.more_vert,
-            ),
-            onPressed: () => showAboutDialog(
-              context: context,
-              applicationIcon: SizedBox(
-                height: 40,
-                width: 40,
-                child: Image.asset('images/whatsapp.png'),
-              ),
-              applicationName: 'WhatsApp\nWeb App',
-              applicationLegalese: 'Copyright (c) 2021 MU Poujhit',
-              applicationVersion: '1.0.5',
-            ),
-          )
-        ],
-      ),
       //Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:15.0) Gecko/20100101 Firefox/15.0.1
       // body: Container(
       //   height: MediaQuery.of(context).size.height,
@@ -84,7 +62,8 @@ class _WhatsAppWebViewState extends State<WhatsAppWebView> {
       //     userAgent: "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; en-US; rv:1.9.0.4) Gecko/20100101 Firefox/60.0",
       //   ),
       // ),
-      body: Stack(
+      body: SafeArea(
+        child: Stack(
         children: [
           InAppWebView(
             key: webViewKey,
@@ -135,6 +114,7 @@ class _WhatsAppWebViewState extends State<WhatsAppWebView> {
           ),
         ],
       ),
+    ),
     );
   }
 }
