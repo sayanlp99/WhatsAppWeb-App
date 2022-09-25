@@ -91,27 +91,6 @@ class _WhatsAppWebViewState extends State<WhatsAppWebView> {
               print(consoleMessage);
             },
           ),
-          Align(
-            alignment: Alignment.bottomCenter,
-            child: ButtonBar(
-              alignment: MainAxisAlignment.center,
-              children: <Widget>[
-                ElevatedButton(
-                  child: Icon(Icons.refresh),
-                  style: ElevatedButton.styleFrom(
-                    primary: Theme.of(context).primaryColor,
-                  ),
-                  onPressed: () async {
-                    if (Platform.isAndroid) {
-                      webViewController?.reload();
-                    } else if (Platform.isIOS) {
-                      webViewController?.loadUrl(urlRequest: URLRequest(url: await webViewController?.getUrl()));
-                    }
-                  },
-                ),
-              ],
-            ),
-          ),
         ],
       ),
     ),
