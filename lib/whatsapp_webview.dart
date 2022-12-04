@@ -33,6 +33,9 @@ class _WhatsAppWebViewState extends State<WhatsAppWebView> {
 
   InAppWebViewGroupOptions options = InAppWebViewGroupOptions(
     crossPlatform: InAppWebViewOptions(
+      useOnLoadResource: true,
+      useOnDownloadStart: true,
+      cacheEnabled: true,
       useShouldOverrideUrlLoading: true,
       mediaPlaybackRequiresUserGesture: false,
       userAgent: 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; en-US; rv:1.9.0.4) Gecko/20100101 Firefox/60.0',
